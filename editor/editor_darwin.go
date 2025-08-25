@@ -23,3 +23,9 @@ func GetOpeningFilepath(str *C.char) {
 func setMyApplicationDelegate() {
 	C.SetMyApplicationDelegate()
 }
+
+// activateWindow brings the window to the foreground on macOS
+func (e *Editor) activateWindow() {
+	e.window.Raise()
+	e.window.ActivateWindow()
+}
